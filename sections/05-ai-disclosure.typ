@@ -2,36 +2,24 @@
 
 = Generative AI Disclosure
 
-In accordance with the CEUR-WS Policy on AI-Assisting Tools, we disclose the following use of generative AI throughout this assignment.
+We used AI during this assignment and are disclosing it here as required.
 
 == Tools and Services Used
 
-- *Claude Code (Anthropic)* --- used as a conversational AI assistant via the Claude Code CLI.
+- *Claude Code (Anthropic)* --- used through the Claude Code CLI as an research assistant and visual designer. Addionaly for organization and documentation. (We used github for version control and Typst for writing, claude was used during the comands and edits of these tools)
 
 == Contributions by Section
 
 === Section 2: Individual Thoughts and Questions
 
-// TODO: Adjust per group member — only those who used AI should disclose.
-
-*Student A:* Claude was used as a Socratic dialogue partner to develop the individual proposal through a series of iterative questions and answers. The core ideas --- shifting from crime prediction to causal investigation, targeting municipalities rather than police, and using tiered data access --- originated from the student's reasoning. Claude's role was to ask clarifying questions that helped structure and sharpen those ideas, and to help articulate the expert questions in the format required by the assignment.
-
-_Prompts used:_ The conversation followed a question-and-answer format where Claude asked successive design questions (e.g., "Who should this tool be for?", "How would you prevent misuse?") and the student provided the substantive answers.
+*Student A:* I used Claude as a librarian while developing my proposal. The ideas themselves (looking at causes instead of crime locations, making the police a coordinator rather than the end user, tiered access) came from me. Claude helped me understand some of the terminology --- things like ecological correlation and data minimisation --- and explained what they actually mean so I could decide if they fit my proposal. I also asked Claude to help me understand the Galic et al. (2023) paper on CAS and Dutch predictive systems, since it's referenced in the assignment and I wanted to know what it actually says before citing it. I had initially a completely diffent idea but existing systems in Dutch police had me change my thoughts.
 
 === Section 3: Subgroup Proposals
 
-Claude was used to help translate the ideas developed in the Q&A session into structured written text matching the assignment's word limits and format requirements. The technical design (dual-trigger model, ecological correlation, tiered access, four-stage interaction flow) was developed collaboratively through dialogue, with the student providing the design principles and Claude helping to formalise them. Claude also suggested referencing the Galic et al. (2023) paper to ground the proposal in existing Dutch legal scholarship.
+The technical design came out of the conversation, with me describing how I thought things should work and Claude helping put it into words you see in the diagram. Claude also generated the flow diagram and the dashboard mockup --- I described what I wanted them to show and Claude built them in Typst. I also used Claude to look up and understand specific terms and concepts that came up during the design (e.g., what Top600 and ProKid 12-SI actually do, how ecological correlation works in practice, what the Dutch Court of Audit report said about CAS).
 
-_Prompts used:_ "Do the changes you think would make sense based on this new info" (referring to the Galic et al. paper); "Create the file and maybe the project in general so I can share it with my friends."
+_Prompts used:_ "create a mockup and flow diagram based on my proposal." (plus additional manipulation on Typst)
 
-=== Section 4: Cross-Auditing
+== Motivation and Possible Impacts
 
-// TODO: Disclose if AI was used for the audit, response, or revision.
-
-#emph[To be completed.]
-
-== Motivation and Reflection
-
-We chose to use generative AI as a _structuring and articulation aid_ rather than a content generator. The intellectual substance --- the proposal to shift from predictive policing to causal infrastructure analysis, the "access follows accountability" principle, the exception-based output model --- originated from group discussion and individual reasoning. AI was used to help organise these ideas into coherent written form and to challenge our thinking through Socratic questioning.
-
-A consequence of this choice is that the written output may be more polished than a first draft typically would be. We mitigated this risk by ensuring that every design decision can be traced back to a specific moment in our dialogue where a human made the substantive choice. The AI never introduced a design element that was not first proposed or validated by a group member.
+We used AI to speed up things we'd have spent a long time on otherwise --- reading through papers, figuring out what specific terms mean, and making diagrams. The design decisions and arguments are ours. One downside we ran into is that AI output is usually narrower than what we are trying to achieve in this course. If we hadn't used AI only as an assisntant for our clear purposes and aligned perspective, the report would've sounded like it was written by a different person entirely.
