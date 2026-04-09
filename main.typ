@@ -5,7 +5,12 @@
 
 #set document(
   title: "Responsible CS — Group Work Report",
-  author: ("Student A", "Student B", "Student C", "Student D"),
+  author: (
+    "Orhan Ağaoğlu",
+    "Petar Verzaal",
+    "Alex Hautelman",
+    "Mart van der Lugt",
+  ),
 )
 
 #set page(
@@ -28,10 +33,10 @@
   #text(size: 12pt)[
     *Group X* \
     \
-    Student A — Student Number \
-    Student B — Student Number \
-    Student C — Student Number \
-    Student D — Student Number \
+    Orhan Ağaoğlu — Student Number \
+    Petar Verzaal — Student Number \
+    Alex Hautelman  — 5075149 \
+    Mart van der Lugt  — 4925408 \
   ]
   #v(1cm)
   #text(size: 11pt)[Delft University of Technology \ April 2026]

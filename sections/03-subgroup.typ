@@ -2,7 +2,7 @@
 
 = Subgroup Proposals
 
-== Subgroup A — [Names] <subgroup-a>
+== Subgroup A — Orhan Ağaoğlu & Petar Verzaal <subgroup-a>
 
 === Tool / Intervention Proposal
 
@@ -67,10 +67,62 @@ This isn't just about privacy for the sake of it. There's a real problem in the 
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-== Subgroup B — [Names] <subgroup-b>
+== Subgroup B — Alex Hautelman & Mart van der Lugt <subgroup-b>
 
 === Tool / Intervention Proposal
-// TODO: ~300 words
+
+We propose the *Spatial Risk and Resource Allocation Dashboard (SRRAD)*: a decision-support tool designed to help police commanders allocate patrol resources more effectively by surfacing where and when crime risk is elevated. The tool divides a municipality into a fine-grained grid and assigns each cell a continuously updated risk score, visualized as an interactive heatmap. SRRAD is an advisory instrument only: it has no authority to dispatch officers, trigger alerts, or take any action. Every operational decision remains with the human commander. SRRAD deliberately avoids demographic data and raw arrest statistics, since these inputs can encode historical policing bias back into future predictions. Instead, the model draws exclusively on direct environmental and behavioral signals:
+
+- Municipal infrastructure telemetry: broken streetlights, abandoned vehicles, recurring vandalism reports.
+- Anonymized emergency service logs: police interventions with confirmed outcomes, ambulance dispatches for physical trauma, and firefighter callouts.
+- Commercial security incidents: shoplifting, aggressive behavior, and trespassing reports from local businesses.
+- Insurance claims: aggregated theft, robbery, vandalism, and arson data.
+- Public tips: anonymized suspicious-activity reports from the public tip line.
+- Safety surveys: community-level perception data.
+- Live deployment data: police presence per grid cell to contextualize scores and detect feedback-loop inflation.
+- Electronic monitoring signals: anonymized activity flags from individuals under judicial supervision.
+- Prediction feedback: structured post-patrol debriefs allowing officers to confirm, challenge, or correct prior assessments.
+
+Alongside each risk score, SRRAD displays a confidence interval and a bias risk flag. Built on an interpretable statistical framework like generalized additive models, every score can be traced back to its specific underlying signals.
 
 === Human--Machine Interaction Design
-// TODO: ~2 pages with flow diagram and mockup
+
+A major risk in any decision-support system is that users stop questioning it. Under pressure, people naturally defer to a confident-looking number on a screen. In predictive policing, this tendency is dangerous. It can concentrate police presence in already over-policed areas, erode officer judgment, and create legal and ethical exposure.
+
+SRRAD uses a human-in-command governing principle. The interface is actively designed to slow down deference, force engagement with the underlying data, and keep responsibility strictly with the officer making the call.
+
+==== The Interaction Flow
+
+The diagram below illustrates how information moves from raw data sources through to a logged deployment decision and back into the model.
+
+#figure(
+  image("../figures/flow-diagram-2.png",)
+)
+
+==== Page 1: Risk Heatmap
+
+The main screen shows the grid overlaid on a municipal map. Each cell is color-coded by risk score, but the display deliberately foregrounds uncertainty. Cells with low data coverage show a reduced-opacity fill, and cells driven by a single data source carry a visible bias risk flag. A commander scanning the map immediately sees how confident the model is and whether that confidence is warranted. The "Advisory Only" banner is permanent, serving as a legal reminder that the heatmap is a starting point for judgment, not a conclusion.
+
+#figure(
+  image("../figures/mock-screen-1.png",)
+)
+
+==== Page 2: Prediction Breakdown and Command Decision Log
+
+Clicking a cell opens the prediction breakdown, which translates feature importance into plain-language drivers. Seeing that a score is driven by broken streetlights might prompt a commander to request municipal repair services instead of deploying a patrol unit.
+
+Crucially, there is no quick-deploy button. To log any action, the commander must acknowledge the confidence level, select an action type, and enter a brief written justification. This creates a cognitive friction gate, a deliberate pause that reduces blind deference. It also produces a timestamped, immutable log linking each decision to the model version and the stated reasoning.
+
+==== Page 3: Prediction Correction and Post-Patrol Debrief
+
+The third screen manages the feedback loop and protects the long-term integrity of the model. After a patrol, officers complete a structured debrief. First, they log if an incident was found and whether it was patrol-discovered or spontaneously reported. Patrol-discovered incidents get a discounted weight in future training to prevent a self-reinforcing loop where police presence inflates future scores.
+
+Second, the screen allows officers to flag data sources they believe are improperly weighted. Finally, it captures qualitative observations the model cannot see, such as community tension or visible disorder, which are attached to the audit log for analysts.
+
+#figure(
+  image("../figures/mock-screen-2.png", width: 50%)
+)
+
+==== Addressing the Challenges
+
+This design directly responds to the three tensions identified in the stakeholder analysis. Automation bias is countered by the cognitive friction gate and the requirement to articulate a justification. The feedback-loop problem is addressed structurally by discounting patrol-discovered incidents during model training. Finally, accountability and liability are made fully traceable through the immutable audit log, making it clear that operational responsibility rests with the commander who made the decision.

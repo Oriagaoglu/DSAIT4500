@@ -12,7 +12,7 @@ We used AI during this assignment and are disclosing it here as required.
 
 === Section 2: Individual Thoughts and Questions
 
-*Student A:* I used Claude as a librarian while developing my proposal. The ideas themselves (looking at causes instead of crime locations, making the police a coordinator rather than the end user, tiered access) came from me. Claude helped me understand some of the terminology --- things like ecological correlation and data minimisation --- and explained what they actually mean so I could decide if they fit my proposal. I also asked Claude to help me understand the Galic et al. (2023) paper on CAS and Dutch predictive systems, since it's referenced in the assignment and I wanted to know what it actually says before citing it. I had initially a completely diffent idea but existing systems in Dutch police had me change my thoughts.
+*Orhan Ağaoğlu:* I used Claude as a librarian while developing my proposal. The ideas themselves (looking at causes instead of crime locations, making the police a coordinator rather than the end user, tiered access) came from me. Claude helped me understand some of the terminology --- things like ecological correlation and data minimisation --- and explained what they actually mean so I could decide if they fit my proposal. I also asked Claude to help me understand the Galic et al. (2023) paper on CAS and Dutch predictive systems, since it's referenced in the assignment and I wanted to know what it actually says before citing it. I had initially a completely diffent idea but existing systems in Dutch police had me change my thoughts.
 
 === Section 3: Subgroup Proposals
 
