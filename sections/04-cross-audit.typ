@@ -2,8 +2,6 @@
 
 = Cross-Audit: Subgroup A's Proposal <audit-a>
 
-== Critical Audit by Subgroup B <audit-a-feedback>
-
 *Strengths*
 
 The proportionality logic is solid: data access only widens when multiple independent signals converge, and "access follows accountability" is baked into the architecture rather than left as a policy promise. Treating the output as a question rather than a verdict is a meaningful guard against over-reliance, and building in a feedback loop where expert disagreements improve future thresholds is the kind of human-in-the-loop design that makes systems like this more accurate and trustworthy over time. The cross-departmental panel also sets a healthy bar for turning a flag into action.
@@ -62,12 +60,95 @@ That said, we have some concerns.
 *The flow diagram could go further.* The current diagram shows the path from data to decision, but the steps between a commander seeing the heatmap and actually filing a report or making a deployment could be more detailed. What happens if two commanders disagree about the same cell? What if the debrief contradicts the original score --- who resolves that, and how quickly does it feed back?
 
 == Response by Subgroup B <audit-b-response>
-// TODO: ~1 page — respond to the audit
+
+We thank Subgroup B for their rigorous audit of SRRAD. Their analysis highlights valid concerns regarding our spatial design, environmental data proxies, and human-machine interaction framework. We recognise that features intended for transparency (such as the bias flag and friction gate) could cause confusion or enable adversarial misuse. Below are the concrete improvements we will integrate into the revised proposal.
+
+*1. Redefining Metrics and Data Integrity*
+
+The audit noted that presenting both a confidence interval and a bias risk flag shifts an unfair analytical burden onto officers and creates circular logic. Furthermore, discounting patrol-discovered incidents may only slow, rather than break, the feedback loop.
+
+- *Unified Certainty Metric:* We will replace the independent bias flag with a single "Certainty" metric. Certainty will only increase when multiple, heavily weighted, and independent signals corroborate a prediction.
+- *Upstream Bias Mitigation:* Data engineers, not officers, will handle bias. Biased sources will be aggressively filtered, unbiased sources will be handled during preprocessing, or biased sources will be excluded from the model entirely.
+- *Feedback Loop Thresholds:* We will introduce a saturation threshold. If an area receives repeated deployment recommendations, the system will pause further scoring until data analysts conduct a mandatory manual recalibration.
+
+*2. Spatial Representation and Environmental Proxies*
+
+We agree that arbitrary grid lines create artificial edge effects and that infrastructure telemetry (e.g., broken streetlights) risks measuring poverty rather than crime, potentially reinforcing institutional prejudice.
+
+- *Contextual Zoning:* We will eliminate the arbitrary grid. SRRAD will instead use amorphous, dynamically generated heat zones or rely strictly on established municipal and socio-economic boundaries.
+- *Expert Validation:* We will consult criminologists to rigorously separate genuine crime-driving signals from baseline poverty indicators before weighting telemetry data.
+- *Cross-Agency Interventions:* We will leverage environmental data to shift responses away from purely punitive patrols. When risk scores are driven by infrastructure decay, SRRAD will explicitly prompt commanders to request municipal interventions (e.g., street repair) instead of police deployment.
+
+*3. Human-Machine Interaction and Governance*
+
+The audit rightly pointed out that our cognitive friction gate assumes good-faith users and fails to account for adversarial "rubber-stamping." The initial flow diagram also lacked necessary operational depth.
+
+- *Multi-Officer Authorisation:* For deployments in previously unpatrolled or highly sensitive areas, SRRAD will require consensus. Two commanders must independently review the data and log a joint decision.
+- *Audit Log Peer Review:* We will introduce mandatory, random administrative reviews of command decision logs. Officers identified as habitually bypassing the friction gate with generic, bad-faith entries will face operational penalties.
+- *Expanded Operational Flow:* We will update the flow diagram to map edge cases. This will detail pathways for resolving commander disagreements, managing contradictions between the initial score and post-patrol debriefs, and establishing strict timelines for how quickly feedback updates the live model.
 
 == Revised Proposal by Subgroup B <audit-b-revised>
 
 === Revised Tool / Intervention Proposal
-// TODO: updated proposal, mark what changed
+
+We propose the *Spatial Risk and Resource Allocation Dashboard (SRRAD)*: a decision-support tool designed to help police commanders allocate patrol resources more effectively by surfacing where and when crime risk is elevated. The tool divides a municipality into [Updated] contextual zones based on established municipal boundaries and socio-economic similarities, replacing arbitrary grids to prevent edge-effect labeling and artificial division. SRRAD assigns each zone a continuously updated risk score, visualised as an interactive heatmap.
+
+SRRAD is an advisory instrument only: it has no authority to dispatch officers, trigger alerts, or take any action. Every operational decision remains with the human commander. SRRAD deliberately avoids demographic data and raw arrest statistics, since these inputs can encode historical policing bias back into future predictions. Instead, the model draws exclusively on direct environmental and behavioral signals:
+
+- [Updated] Municipal infrastructure telemetry (expert-validated to separate genuine crime signals from baseline poverty indicators): broken streetlights, abandoned vehicles, recurring vandalism reports.
+- Anonymized emergency service logs: police interventions with confirmed outcomes, ambulance dispatches for physical trauma, and firefighter callouts.
+- Commercial security incidents: shoplifting, aggressive behavior, and trespassing reports from local businesses.
+- Insurance claims: aggregated theft, robbery, vandalism, and arson data.
+- Public tips: anonymized suspicious-activity reports from the public tip line.
+- Safety surveys: community-level perception data.
+- Live deployment data: police presence per grid cell to contextualize scores and detect feedback-loop inflation.
+- Electronic monitoring signals: anonymized activity flags from individuals under judicial supervision.
+- Prediction feedback: structured post-patrol debriefs allowing officers to confirm, challenge, or correct prior assessments.
+
+[Updated] Alongside each risk score, SRRAD displays a single, unified "Certainty" metric. We have removed independent bias risk flags to avoid placing circular analytical burdens on officers. Instead, bias is aggressively filtered and un-biased upstream by data engineers. The Certainty metric only increases when multiple, heavily weighted, and independent signals corroborate a prediction.
 
 === Revised Human--Machine Interaction Design
-// TODO: updated interaction design, mark changes
+
+*Human--Machine Interaction Design*
+
+A major risk in any decision-support system is that users stop questioning it. Under pressure, people naturally defer to a confident-looking number on a screen. In predictive policing, this tendency is dangerous. It can concentrate police presence in already over-policed areas, erode officer judgment, and create legal and ethical exposure.
+
+SRRAD uses a human-in-command governing principle. The interface is actively designed to slow down deference, force engagement with the underlying data, and keep responsibility strictly with the officer making the call.
+
+*The Interaction Flow*
+
+The diagram below illustrates how information moves from raw data sources through to a logged deployment decision and back into the model.
+
+#figure(
+    image("../figures/flow-diagram-2-updated.png", width: 120%),
+    caption: [The flow diagram has been expanded to map edge cases. It now includes detailed pathways for multi-officer consensus loops, managing contradictions between the initial score and the debrief, and strict temporal rules for how quickly feedback updates the live model.]
+)
+
+*Page 1: Risk Heatmap*
+
+The main screen shows the [Updated] amorphous, dynamically generated heat zones overlaid on a municipal map. Each [Updated] zone is color-coded by risk score, but the display deliberately foregrounds uncertainty. Zones with low data coverage show a reduced-opacity fill. A commander scanning the map immediately sees how confident the model is based on the [Updated] Certainty metric. The "Advisory Only" banner is permanent, serving as a legal reminder that the heatmap is a starting point for judgment, not a conclusion.
+
+#figure(
+    image("../figures/mock-screen-1.png"),
+    caption: [Remove arbitrary grid lines in favor of amorphous zones or municipal boundaries.]
+)
+
+*Page 2: Prediction Breakdown and Command Decision Log*
+
+Clicking a cell opens the prediction breakdown, which translates feature importance into plain-language drivers. [Updated] We emphasize cross-agency interventions: seeing that a score is heavily driven by infrastructure decay (e.g., broken streetlights), SRRAD explicitly prompts the commander to request municipal repair services instead of deploying a punitive patrol unit.
+
+Crucially, there is no quick-deploy button. To log any action, the commander must acknowledge the Certainty level, select an action type, and enter a brief written justification. This creates a cognitive friction gate, a deliberate pause that reduces blind deference. [Updated] To counter adversarial users who might approve decisions without consideration, deployments in previously unpatrolled or highly sensitive areas require multi-officer authorisation: two commanders must independently review the data and log a joint decision. Furthermore, all logs are subject to mandatory, random administrative peer reviews.
+
+*Page 3: Prediction Correction and Post-Patrol Debrief*
+
+The third screen manages the feedback loop and protects the long-term integrity of the model. After a patrol, officers complete a structured debrief. First, they log whether an incident was found and whether it was patrol-discovered or spontaneously reported. Patrol-discovered incidents get a discounted weight in future training. [Updated] To guarantee this discount breaks the feedback loop, we introduce a saturation threshold: if an area receives repeated deployment recommendations, the system pauses further scoring until data analysts conduct a mandatory manual recalibration.
+
+Second, the screen allows officers to flag data sources they believe are improperly weighted. Finally, it captures qualitative observations the model cannot see, such as community tension or visible disorder, which are attached to the audit log for analysts.
+
+#figure(
+  image("../figures/mock-screen-2.png", width: 50%)
+)
+
+*Addressing the Challenges*
+
+This design directly responds to the tensions identified in the stakeholder analysis. Automation bias is countered by the cognitive friction gate and the requirement to articulate a justification. [Updated] Adversarial misuse is mitigated through multi-officer consensus rules and mandatory peer reviews of audit logs. The feedback-loop problem is addressed structurally by discounting patrol-discovered incidents [Updated] and enforcing saturation thresholds that mandate human recalibration. Finally, accountability and liability are made fully traceable through the immutable audit log, making it clear that operational responsibility rests with the commander who made the decision.
