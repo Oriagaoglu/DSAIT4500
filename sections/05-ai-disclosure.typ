@@ -59,6 +59,8 @@ Context:
 ```
 
 
+*Mart van der Lugt:* I used Claude in the same way as for my individual proposal, to summarize and skim through literature. I also used Claude to get an overview of this literature.
+
 == Motivation and Possible Impacts
 
 We used AI to speed up things we'd have spent a long time on otherwise --- reading through papers, figuring out what specific terms mean, and making diagrams. The design decisions and arguments are ours. One downside we ran into is that AI output is usually narrower than what we are trying to achieve in this course. If we hadn't used AI only as an assisntant for our clear purposes and aligned perspective, the report would've sounded like it was written by a different person entirely.
