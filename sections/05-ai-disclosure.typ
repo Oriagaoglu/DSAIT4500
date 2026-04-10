@@ -22,6 +22,15 @@ We used AI during this assignment and are disclosing it here as required.
 
 I intentionally kept generative AI use focused on writing support and targeted stakeholder expansion, while avoiding dependence for core brainstorming. The moral interpretations, technical choices, and design decisions in this report are mine. Without AI, a comparable result was possible with more time; I used AI to improve clarity and structure more efficiently.
 
+
+*Mart van der Lugt:* I used Claude to summarize and skim through sources while developing my proposal. All ideas and text in my proposal are my own. 
+
+_Prompts used:_
+```text
+summarize the Galic et al. (2023) paper. Indicate key points and where to find them in the paper.
+```
+
+
 === Section 3: Subgroup Proposals
 
 *Orhan Ağaoğlu:* The technical design came out of the conversation, with me describing how I thought things should work and Claude helping put it into words you see in the diagram. Claude also generated the flow diagram and the dashboard mockup --- I described what I wanted them to show and Claude built them in Typst. I also used Claude to look up and understand specific terms and concepts that came up during the design (e.g., what Top600 and ProKid 12-SI actually do, how ecological correlation works in practice, what the Dutch Court of Audit report said about CAS).
