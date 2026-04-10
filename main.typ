@@ -7,7 +7,6 @@
   title: "Responsible CS — Group Work Report",
   author: (
     "Orhan Ağaoğlu",
-    "Petar Verzaal",
     "Alex Hautelman",
     "Mart van der Lugt",
   ),
@@ -31,10 +30,9 @@
   #text(size: 20pt, weight: "bold")[Group Work Report]
   #v(1.5cm)
   #text(size: 12pt)[
-    *Group X* \
+    *Group 9* \
     \
-    Orhan Ağaoğlu — Student Number \
-    Petar Verzaal — Student Number \
+    Orhan Ağaoğlu — 5518725 \
     Alex Hautelman  — 5075149 \
     Mart van der Lugt  — 4925408 \
   ]

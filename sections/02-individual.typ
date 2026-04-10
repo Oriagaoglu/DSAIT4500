@@ -32,15 +32,6 @@ _Question:_ If you start directing resources to an area, how do you avoid basica
 _Why:_ Even well-intentioned flagging could scare off businesses, raise insurance, or make people feel watched. I don't know how to avoid that.
 
 
-== Petar Verzaal  <individual-b>
-
-=== Individual Proposal
-// TODO: ~300 words
-
-=== Questions for Experts
-// TODO: 3+ questions to 3 different experts
-
-
 == Alex Hautelman  <individual-c>
 
 === Individual Proposal

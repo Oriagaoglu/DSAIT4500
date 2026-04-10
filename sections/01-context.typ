@@ -6,4 +6,6 @@ In this report, we address the challenge posed by the discontinuation of the Dut
 
 We were asked: if the national police approached us for a better technical tool for crime prevention — one that is data-driven yet keeps humans skeptical of automated predictions and in control of final decisions — what would we propose?
 
+*A note on group composition:* Petar Verzaal left the group on the morning of the deadline and did not participate in any part of this report. As a result, Subgroup A consists of a single member (Orhan Ağaoğlu).
+
 The following chapters present our individual ideas (Section 2), subgroup proposals with interaction designs (Section 3), cross-audit feedback and revisions (Section 4), and our generative AI disclosure (Section 5).
