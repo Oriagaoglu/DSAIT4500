@@ -50,7 +50,6 @@ Context:
 ```
 
 
-
 == Motivation and Possible Impacts
 
 We used AI to speed up things we'd have spent a long time on otherwise --- reading through papers, figuring out what specific terms mean, and making diagrams. The design decisions and arguments are ours. One downside we ran into is that AI output is usually narrower than what we are trying to achieve in this course. If we hadn't used AI only as an assisntant for our clear purposes and aligned perspective, the report would've sounded like it was written by a different person entirely.

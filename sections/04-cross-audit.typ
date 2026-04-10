@@ -61,7 +61,7 @@ That said, we have some concerns.
 
 == Response by Subgroup B <audit-b-response>
 
-We thank Subgroup B for their rigorous audit of SRRAD. Their analysis highlights valid concerns regarding our spatial design, environmental data proxies, and human-machine interaction framework. We recognise that features intended for transparency (such as the bias flag and friction gate) could cause confusion or enable adversarial misuse. Below are the concrete improvements we will integrate into the revised proposal.
+We thank Subgroup A for their rigorous audit of SRRAD. Their analysis highlights valid concerns regarding our spatial design, environmental data proxies, and human-machine interaction framework. We recognise that features intended for transparency (such as the bias flag and friction gate) could cause confusion or enable adversarial misuse. Below are the concrete improvements we will integrate into the revised proposal.
 
 *1. Redefining Metrics and Data Integrity*
 
@@ -129,8 +129,8 @@ The diagram below illustrates how information moves from raw data sources throug
 The main screen shows the [Updated] amorphous, dynamically generated heat zones overlaid on a municipal map. Each [Updated] zone is color-coded by risk score, but the display deliberately foregrounds uncertainty. Zones with low data coverage show a reduced-opacity fill. A commander scanning the map immediately sees how confident the model is based on the [Updated] Certainty metric. The "Advisory Only" banner is permanent, serving as a legal reminder that the heatmap is a starting point for judgment, not a conclusion.
 
 #figure(
-    image("../figures/mock-screen-1.png"),
-    caption: [Remove arbitrary grid lines in favor of amorphous zones or municipal boundaries.]
+    image("../figures/mock-screen-1-updated.png"),
+    caption: [Removed arbitrary grid lines in favor of amorphous zones or municipal boundaries.]
 )
 
 *Page 2: Prediction Breakdown and Command Decision Log*
